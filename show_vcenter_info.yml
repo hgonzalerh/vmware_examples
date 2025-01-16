@@ -6,5 +6,5 @@
       register: vcenter_about_info
 
     - name: Show the info
-      ansible.builtin.debug::
+      ansible.builtin.debug:
         var: vcenter_about_info
