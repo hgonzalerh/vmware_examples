@@ -1,0 +1,10 @@
+- name: Show some vcenter information
+  hosts: localhost
+  tasks:
+    - name: Get vcenter info
+      community.vmware.vmware_about_info:
+      register: vcenter_about_info
+
+    - name: Show the info
+      ansible.builtin.debug::
+        var: vcenter_about_info
