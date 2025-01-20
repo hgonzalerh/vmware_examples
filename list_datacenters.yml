@@ -1,0 +1,12 @@
+- name: Show information about DCs, Vcenter info should come from a credential
+  hosts: localhost
+  tasks:
+    - name: Gather information about all datacenters
+      community.vmware.vmware_datacenter_info:
+      register: dc_info
+      
+    - name: Show DC information
+      ansible.builtin.debug:
+        var: dc_info
+
+        
