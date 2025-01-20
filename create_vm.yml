@@ -1,0 +1,20 @@
+- name: Create a VM in VMware
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Create a VM from a template
+      community.vmware.vmware_guest:
+        validate_certs: false
+        cluster: "{{ vm_cluster }}"
+        folder: "{{ vm_folder }}" 
+        datastore: "{{ vm_datastore }}"
+        name: "{{ vm_name }}"
+        template: "{{ vm_source_template}}"
+        networks:
+          - name: "{{ vm_network }}"
+        # hardware:
+        #   memory_mb: 4096  # Adjust memory size as needed
+        #   num_cpus: 2      # Adjust the number of CPUs as needed
+        power_on: true
+      register: new_vm
+        
