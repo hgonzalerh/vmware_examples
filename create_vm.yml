@@ -11,7 +11,7 @@
         datastore: "{{ vm_datastore }}"
         name: "{{ vm_name }}"
         template: "{{ vm_source_template}}"
-        customization:
+        # customization:
         # # Avoid customization
         #   existing_vm: false
         # networks:
