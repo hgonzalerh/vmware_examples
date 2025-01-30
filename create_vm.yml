@@ -11,9 +11,6 @@
         datastore: "{{ vm_datastore }}"
         name: "{{ vm_name }}"
         template: "{{ vm_source_template}}"
-        # hardware:
-        #   memory_mb: 4096  # Adjust memory size as needed
-        #   num_cpus: 2      # Adjust the number of CPUs as needed
       register: new_vm
       
     - name: Show results of creation
@@ -28,13 +25,8 @@
         folder: "{{ vm_folder }}" 
         datastore: "{{ vm_datastore }}"
         name: "{{ vm_name }}"
-        # template: "{{ vm_source_template}}"
         networks:
           - name: "{{ vm_network }}"
-        # hardware:
-        #   memory_mb: 4096  # Adjust memory size as needed
-        #   num_cpus: 2      # Adjust the number of CPUs as needed
-      register: new_vm
       tags:
         - networkconfig
 
